@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from homeapp.models import Login, company
+from homeapp.models import Login, company, users
 
 
 class DateInput(forms.DateInput):
@@ -36,4 +36,13 @@ class companyRegister(forms.ModelForm):
 
     class Meta:
         model = company
+        fields = ('name', 'contact_no', 'email', 'address',)
+
+
+class UserRegister(forms.ModelForm):
+    contact_no = forms.CharField(validators=[phone_number_validator])
+
+
+    class Meta:
+        model = users
         fields = ('name', 'contact_no', 'email', 'address',)

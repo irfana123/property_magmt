@@ -70,7 +70,12 @@
                 </ul>
               </li>
               <li><a href=" {% static 'services.html' %} ">Services</a></li>
-              <li><a href=" {% static 'about.html' %} ">Sign Up</a></li>
+               <li class="has-children">
+                <a href=" # ">Sign up</a>
+                <ul class="dropdown">
+                  <li><a href="{% url 'company_register' %}">Company signup</a></li>
+                  <li><a href="{% url 'user_register' %}">Users Signup</a></li>
+                </ul>
               <li><a href=" {% url 'loginview' %} ">Login</a></li>
             </ul>
 

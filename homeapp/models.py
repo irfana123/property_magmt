@@ -18,6 +18,16 @@ class company(models.Model):
     def __str__(self):
         return self.name
 
+class users(models.Model):
+    user=models.OneToOneField(Login,on_delete=models.CASCADE,related_name='users')
+    name=models.CharField(max_length=100)
+    contact_no = models.CharField(max_length=100)
+    email = models.EmailField()
+    address = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
 
 
 
