@@ -6,7 +6,7 @@ from homeapp.models import company
 
 
 def admin_home(request):
-    return render(request,'admintemp/index.html')
+    return render(request,'admintemp/ahome.html')
 
 
 @login_required(login_url='loginview')

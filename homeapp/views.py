@@ -22,6 +22,10 @@ def loginview(request):
             if user.is_staff:
                 print("hiiii")
                 return redirect('admin_home')
+            elif user.is_company:
+                return redirect('company_home')
+            elif user.is_user:
+                return redirect('user_home')
         else:
             messages.info(request, 'Invalid Credentials')
     return render(request,'loginpage.html')
