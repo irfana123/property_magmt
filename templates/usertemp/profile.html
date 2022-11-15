@@ -1,0 +1,52 @@
+{% extends 'usertemp/uhome.html' %}
+{% block content %}
+{% load static %}
+
+
+
+        <!-- page content -->
+
+            <div class="page-title">
+
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+                          <!-- Current avatar -->
+                          <img class="img-responsive avatar-view" src="{% static 'dash_static/images/picture.jpg' %}" alt="Avatar" title="Change the avatar">
+                        </div>
+                      </div>
+                      <h3>{{request.user}}</h3>
+
+                      <ul class="list-unstyled user_data">
+                          {% for i in profile %}
+                        <li><i class="fa fa-map-marker user-profile-icon"></i> {{i.address}}
+                        </li>
+
+                        <li>
+                          <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                        </li>
+
+                        <li class="m-top-xs">
+                          <i class="fa fa-external-link user-profile-icon"></i>
+                          <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                        </li>
+                      </ul>
+
+                      <a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                      <br />
+
+
+
+
+        <!-- /page content -->
+
+{% endfor %}
+{% endblock %}

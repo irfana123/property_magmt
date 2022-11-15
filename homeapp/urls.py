@@ -5,9 +5,35 @@ from homeapp import views, adminviews, companyviews, userviews
 urlpatterns = [
 path('',views.home,name='home'),
 path('loginview',views.loginview,name='loginview'),
+path('logout_view',views.logout_view,name='logout_view'),
 path('admin_home',adminviews.admin_home,name='admin_home'),
 path('company_register',views.company_register,name='company_register'),
 path('user_register',views.user_register,name='user_register'),
 path('company_home',companyviews.company_home,name='company_home'),
 path('user_home',userviews.user_home,name='user_home'),
-    ]
+
+
+#     admin views
+path('view_company',adminviews.view_company,name='view_company'),
+path('view_users',adminviews.view_users,name='view_users'),
+
+
+
+#     company views
+path('profile_view',companyviews.profile_view,name='profile_view'),
+path('upload_plans',companyviews.upload_plans,name='upload_plans'),
+path('view_plans',companyviews.view_plans,name='view_plans'),
+path('view_planrequests',companyviews.view_planrequests,name='view_planrequests'),
+path('chatwithuser',companyviews.chatwithuser,name='chatwithuser'),
+path('reviews',companyviews.reviews,name='reviews'),
+
+
+
+    #user views
+path('userprofile',userviews.userprofile,name='userprofile'),
+
+
+
+
+]
+

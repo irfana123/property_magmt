@@ -62,10 +62,10 @@ def user_register(request):
             c.user = user
             c.save()
             messages.info(request, 'User Registered Successfully')
-            return redirect('login_view')
-    return render(request, 'register.html', {'login_form': login_form, 'user_form': user_form})
+            return redirect('loginview')
+    return render(request, 'userregister.html', {'login_form': login_form, 'user_form': user_form})
 
 
 def logout_view(request):
     logout(request)
-    return redirect('login_view')
+    return redirect('loginview')
