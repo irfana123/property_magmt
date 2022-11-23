@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from homeapp.models import Login, company, users
+from homeapp.models import Login, company, users, plan_details
 
 
 class DateInput(forms.DateInput):
@@ -46,3 +46,9 @@ class UserRegister(forms.ModelForm):
     class Meta:
         model = users
         fields = ('name', 'contact_no', 'email', 'address',)
+
+
+class uploadplanform(forms.ModelForm):
+    class Meta:
+        model=plan_details
+        fields=('company','elevation','twod_plan','threed_plan','rooms','bathrooms','area',)

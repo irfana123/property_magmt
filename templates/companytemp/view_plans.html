@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'companytemp/chome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
 
-</body>
-</html>
+
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">Elevation</th>
+                            <th class="column-title">2D plan </th>
+                            <th class="column-title">3Dplan</th>
+                            <th class="column-title">Rooms</th>
+                            <th class="column-title">Bathrooms</th>
+                            <th class="column-title">Area</th>
+                            <th class="column-title">Action</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in plans %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" "><img src="{{i.elevation.url}}"height="50" width="50"></td>
+                            <td class=" "><img src="{{i.twod_plan.url}}"height="50" width="50"></td>
+                            <td class=" "><img src="{{i.threed_plan.url}}"height="50" width="50"></td>
+                            <td class=" ">{{i.rooms}}</td>
+                            <td class="a-right a-right ">{{i.bathrooms}}</td>
+                            <td class="a-right a-right ">{{i.area}}</td>
+                            <td class=" last"><a href="{% url 'update_plans' i.id %}">Update</a>
+                            </td>
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+
+
+{% endblock %}

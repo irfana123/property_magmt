@@ -27,7 +27,15 @@ class users(models.Model):
 
     def __str__(self):
         return self.name
-
+class plan_details(models.Model):
+    company=models.ForeignKey(Login,on_delete=models.CASCADE,related_name='company_name')
+    elevation=models.ImageField(blank=True,null=True)
+    twod_plan=models.ImageField(blank=True,null=True)
+    threed_plan=models.ImageField(blank=True,null=True)
+    rooms=models.IntegerField(null=True,blank=True)
+    bathrooms=models.IntegerField(null=True,blank=True)
+    area=models.CharField(max_length=1000,null=True,blank=True)
+    
 
 
 

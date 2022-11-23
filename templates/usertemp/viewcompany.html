@@ -1,0 +1,40 @@
+{% extends 'usertemp/uhome.html' %}
+{% block content %}
+{% load static %}
+
+<table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">Name</th>
+                            <th class="column-title">Contact No </th>
+                            <th class="column-title">Email</th>
+                            <th class="column-title">Address</th>
+                            <th class="column-title">Rating</th>
+
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in data %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" ">{{i.name}}</td>
+                            <td class="a-right a-right ">{{i.contact_no}}</td>
+                            <td class="a-right a-right ">{{i.email}}</td>
+
+                            <td class="a-right a-right ">{{i.address}}</td>
+                            <td class="a-right a-right ">{{i.area}}</td>
+
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+{% endblock %}

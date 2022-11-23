@@ -77,7 +77,7 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> COMPANY <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">View Company</a></li>
+                      <li><a href="{% url 'viewcompany' %}">View Company</a></li>
 <!--                      <li><a href=" {% static 'form_advanced.html' %} ">Advanced Components</a></li>-->
 <!--                      <li><a href=" {% static 'form_validation.html' %} ">Form Validation</a></li>-->
 <!--                      <li><a href=" {% static 'form_wizards.html' %} ">Form Wizard</a></li>-->
@@ -87,7 +87,7 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> PLANS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href=" {% static 'general_elements.html' %} ">View Plans</a></li>
+                      <li><a href=" {% url 'viewplans' %} ">View Plans</a></li>
                       <li><a href=" {% static 'media_gallery.html' %} ">Request Plans</a></li>
                       <li><a href=" {% static 'typography.html' %} ">Purshase Plans</a></li>
 <!--                      <li><a href=" {% static 'icons.html' %} ">Icons</a></li>-->

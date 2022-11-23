@@ -26,11 +26,14 @@ path('view_plans',companyviews.view_plans,name='view_plans'),
 path('view_planrequests',companyviews.view_planrequests,name='view_planrequests'),
 path('chatwithuser',companyviews.chatwithuser,name='chatwithuser'),
 path('reviews',companyviews.reviews,name='reviews'),
+path('update_plans/<int:id>/',companyviews.update_plans,name='update_plans'),
 
 
 
     #user views
 path('userprofile',userviews.userprofile,name='userprofile'),
+path('viewcompany',userviews.viewcompany,name='viewcompany'),
+path('viewplans',userviews.viewplans,name='viewplans'),
 
 
 
