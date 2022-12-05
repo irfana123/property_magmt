@@ -88,7 +88,8 @@
                   <li><a><i class="fa fa-desktop"></i> PLANS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href=" {% url 'viewplans' %} ">View Plans</a></li>
-                      <li><a href=" {% static 'media_gallery.html' %} ">Request Plans</a></li>
+                      <li><a href=" {% url 'requestplans' %} ">Request Plans</a></li>
+                      <li><a href=" {% url 'viewrequest' %} ">View Requests</a></li>
                       <li><a href=" {% static 'typography.html' %} ">Purshase Plans</a></li>
 <!--                      <li><a href=" {% static 'icons.html' %} ">Icons</a></li>-->
 <!--                      <li><a href=" {% static 'glyphicons.html' %} ">Glyphicons</a></li>-->
@@ -992,6 +993,7 @@
     </div>
 
     <!-- jQuery -->
+
     <script src=" {% static 'vendors/jquery/dist/jquery.min.js' %} "></script>
     <!-- Bootstrap -->
     <script src=" {% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %} "></script>
@@ -1031,6 +1033,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src=" {% static 'build/js/custom.min.js' %} "></script>
-	
+
   </body>
 </html>

@@ -1,0 +1,35 @@
+{% extends 'usertemp/uhome.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+
+<table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">Company Name</th>
+
+                            <th class="column-title">Status</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in data %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" ">{{i.company_name}}</td>
+
+                            <td class="a-right a-right "><a href="{% url 'viewreqreply' i.id %}">view</a></td>
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+
+{% endblock %}

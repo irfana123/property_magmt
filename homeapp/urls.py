@@ -24,6 +24,7 @@ path('profile_view',companyviews.profile_view,name='profile_view'),
 path('upload_plans',companyviews.upload_plans,name='upload_plans'),
 path('view_plans',companyviews.view_plans,name='view_plans'),
 path('view_planrequests',companyviews.view_planrequests,name='view_planrequests'),
+path('replytorequest/<int:id>/',companyviews.replytorequest,name='replytorequest'),
 path('chatwithuser',companyviews.chatwithuser,name='chatwithuser'),
 path('reviews',companyviews.reviews,name='reviews'),
 path('update_plans/<int:id>/',companyviews.update_plans,name='update_plans'),
@@ -34,6 +35,9 @@ path('update_plans/<int:id>/',companyviews.update_plans,name='update_plans'),
 path('userprofile',userviews.userprofile,name='userprofile'),
 path('viewcompany',userviews.viewcompany,name='viewcompany'),
 path('viewplans',userviews.viewplans,name='viewplans'),
+path('requestplans',userviews.requestplans,name='requestplans'),
+path('viewrequest',userviews.viewrequest,name='viewrequest'),
+path('viewreqreply/<int:id>/',userviews.viewreqreply,name='viewreqreply'),
 
 
 

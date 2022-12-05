@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-requests page
-</body>
-</html>
+{% extends 'companytemp/chome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+
+
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">User</th>
+                            <th class="column-title">Rooms</th>
+                            <th class="column-title">Bathrooms</th>
+                            <th class="column-title">Budget</th>
+                            <th class="column-title">Additional Data</th>
+                            <th class="column-title">Area</th>
+
+                            <th class="column-title">Action</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in data %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" ">{{i.user}}</td>
+                            <td class=" ">{{i.room}}</td>
+                            <td class=" ">{{i.bath}}</td>
+                            <td class=" ">Rs. {{i.budjet}}</td>
+                            <td class=" ">{{i.additional}}</td>
+                            <td class=" ">{{i.area}} Sq.Ft</td>
+
+                            <td class=" last"><a href="{% url 'replytorequest' i.id %}">Reply</a>
+                            </td>
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+
+
+{% endblock %}

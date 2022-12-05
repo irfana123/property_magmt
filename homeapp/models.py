@@ -37,6 +37,23 @@ class plan_details(models.Model):
     area=models.CharField(max_length=1000,null=True,blank=True)
     
 
+class plan_request(models.Model):
+    user=models.ForeignKey(Login,on_delete=models.CASCADE)
+    company_name=models.OneToOneField(company,on_delete=models.CASCADE,blank=True,null=True)
+    room=models.IntegerField(null=True,blank=True)
+    bath=models.IntegerField(null=True,blank=True)
+    area=models.CharField(max_length=1000,null=True,blank=True)
+    additional=models.TextField(blank=True,null=True)
+    budjet=models.IntegerField(null=True,blank=True)
+    status=models.IntegerField(default=0)
+    reply = models.FileField(blank=True, null=True)
+
+class replyreq(models.Model):
+    user=models.ForeignKey(Login,on_delete=models.CASCADE,null=True,blank=True)
+    company_name=models.OneToOneField(company,on_delete=models.CASCADE,null=True,blank=True)
+    reply=models.FileField(blank=True,null=True)
+
+
 
 
 

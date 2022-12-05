@@ -1,0 +1,30 @@
+{% extends 'companytemp/chome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+<div class="col-lg-8">
+    <div class="card" style="width:600px;">
+        <div class="card-header"><h1><strong>Reply Form</strong></h1></div>
+        <div class="card-body card-block">
+            <form method="post">{% csrf_token %}
+
+                <div class="form-group">
+
+                    <input type="file">
+
+                </div>
+
+                <div class="form-actions form-group ">
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </div>
+                {% for message in messages %}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock  %}

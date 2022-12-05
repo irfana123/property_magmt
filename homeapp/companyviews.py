@@ -1,7 +1,8 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 
-from homeapp.forms import uploadplanform
-from homeapp.models import company, plan_details
+from homeapp.forms import uploadplanform, replyreqform
+from homeapp.models import company, plan_details, plan_request, replyreq
 
 
 def company_home(request):
@@ -42,7 +43,20 @@ def update_plans(request,id):
     return render(request,'companytemp/updateplans.html',{'form':form})
 
 def view_planrequests(request):
-    return render(request,'companytemp/requests.html')
+    data= plan_request.objects.all()
+    return render(request,'companytemp/requests.html',{'data':data})
+
+
+def replytorequest(request,id):
+    replanreq=plan_request.objects.get(id=id)
+
+    if request.method=='POST':
+        r = request.POST.get('reply')
+        replanreq.reply = r
+        replanreq.save()
+        messages.info(request, 'Reply send for complaint')
+        return redirect('view_planrequests')
+    return render(request,'companytemp/replytorequest.html')
 
 def chatwithuser(request):
     return render(request,'companytemp/chatwithuser.html')

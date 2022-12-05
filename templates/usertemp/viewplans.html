@@ -1,0 +1,31 @@
+{% extends 'usertemp/uhome.html' %}
+{% block content %}
+
+
+        <!-- page content -->
+ {% for i in plan %}
+                      <div class="col-md-55">
+
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width:100%; display: block;" src="{{i.elevation.url}}" alt="image" />
+                            <div class="mask">
+                              <p>{{i.area}}</p>
+
+                            </div>
+                          </div>
+                          <div class="caption">
+                              <div class="tools tools-bottom">
+                                <a href="#"><i class="fa fa-building" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-toilet"></i></a>
+                                <a href="#"><i class="fa fa-bed"></i> 2</a>
+                              </div>
+                            <p>Snow and Ice Incoming for the South</p>
+                          </div>
+                        </div>
+                      </div>
+
+                        {% endfor %}
+
+        <!-- /page content -->
+{% endblock %}

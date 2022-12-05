@@ -1,0 +1,18 @@
+{% extends 'usertemp/uhome.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+
+
+{% for i in reply %}
+
+{{i.reply}}
+
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}
