@@ -39,7 +39,7 @@ class plan_details(models.Model):
 
 class plan_request(models.Model):
     user=models.ForeignKey(Login,on_delete=models.CASCADE)
-    company_name=models.OneToOneField(company,on_delete=models.CASCADE,blank=True,null=True)
+    company_name=models.ForeignKey(company,on_delete=models.CASCADE,blank=True,null=True)
     room=models.IntegerField(null=True,blank=True)
     bath=models.IntegerField(null=True,blank=True)
     area=models.CharField(max_length=1000,null=True,blank=True)

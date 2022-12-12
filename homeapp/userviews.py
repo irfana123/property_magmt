@@ -41,4 +41,5 @@ def viewrequest(request):
 def viewreqreply(request,id):
     data=plan_request.objects.get(id=id)
 
+
     return render(request,'usertemp/viewreqreply.html',{'data':data})

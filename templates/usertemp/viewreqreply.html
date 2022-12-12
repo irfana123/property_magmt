@@ -3,13 +3,8 @@
 {% block content %}
 {% load static %}
 
+<a href="{{data.reply}}" download><img src="{% static 'plan.jpeg' %}">{{data.reply}}</a>
 
-{% for i in reply %}
-
-{{i.reply}}
-
-
-{% endfor %}
 
 
 
