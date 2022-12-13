@@ -1,0 +1,43 @@
+{% extends 'usertemp/uhome.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">subject</th>
+                            <th class="column-title">complaint</th>
+                            <th class="column-title">Status</th>
+
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in n %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" ">{{i.subject}}</td>
+                            <td class="a-right a-right ">{{i.complaint}}</td>
+                              <td>
+
+                             {% if i.reply == None %}
+                                <p>No Reply Yet..</p>
+                                {% else %}
+                                {{i.reply}}
+                                {% endif %}
+                              </td>
+
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+
+{% endblock %}

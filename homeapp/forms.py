@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from homeapp.models import Login, company, users, plan_details, plan_request
+from homeapp.models import Login, company, users, plan_details, plan_request, userComplaint
 
 
 class DateInput(forms.DateInput):
@@ -63,3 +63,9 @@ class request_plan_form(forms.ModelForm):
 class replyreqform(forms.ModelForm):
     class Meta:
         fields=('reply',)
+
+
+class userComplaintForm(forms.ModelForm):
+    class Meta:
+        model=userComplaint
+        fields=('subject','complaint','date',)

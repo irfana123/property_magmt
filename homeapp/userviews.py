@@ -1,7 +1,8 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 
-from homeapp.forms import request_plan_form
-from homeapp.models import users, company, plan_details, plan_request
+from homeapp.forms import request_plan_form, userComplaintForm
+from homeapp.models import users, company, plan_details, plan_request, userComplaint
 
 
 def user_home(request):
@@ -43,3 +44,25 @@ def viewreqreply(request,id):
 
 
     return render(request,'usertemp/viewreqreply.html',{'data':data})
+
+
+def addcomplaint(request):
+    form = userComplaintForm()
+    u = request.user
+    if request.method == 'POST':
+        form = userComplaintForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = u
+            obj.save()
+            messages.info(request, 'Complaint Registered Successfully')
+            return redirect('user_home')
+    else:
+        form = userComplaintForm()
+    return render(request,'usertemp/addcomplaint.html',{'form':form})
+
+
+def complaintview(request):
+    n = userComplaint.objects.filter(user=request.user)
+    return render(request, 'usertemp/viewcomplaint.html', {'n': n})
+

@@ -1,0 +1,42 @@
+{% extends 'companytemp/chome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+
+
+<table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Sl.No </th>
+                            <th class="column-title">subject</th>
+                            <th class="column-title">complaint</th>
+                            <th class="column-title">Reply</th>
+
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr class="even pointer">
+                              {% for i in data %}
+
+                            <td class=" ">{{forloop.counter}}</td>
+                            <td class=" ">{{i.subject}}</td>
+                            <td class="a-right a-right ">{{i.complaint}}</td>
+                              <td class=" "><a href="#"> view </a>
+
+                              </td>
+
+
+                          </tr>
+                        {% endfor %}
+
+                        </tbody>
+                      </table>
+
+
+
+
+
+
+{% endblock %}

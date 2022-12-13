@@ -31,12 +31,14 @@ path('update_plans/<int:id>/',companyviews.update_plans,name='update_plans'),
 
 
 
-    #user views
+#user views
 path('userprofile',userviews.userprofile,name='userprofile'),
 path('viewcompany',userviews.viewcompany,name='viewcompany'),
 path('viewplans',userviews.viewplans,name='viewplans'),
 path('requestplans',userviews.requestplans,name='requestplans'),
 path('viewrequest',userviews.viewrequest,name='viewrequest'),
+path('addcomplaint',userviews.addcomplaint,name='addcomplaint'),
+path('complaintview',userviews.complaintview,name='complaintview'),
 path('viewreqreply/<int:id>/',userviews.viewreqreply,name='viewreqreply'),
 
 

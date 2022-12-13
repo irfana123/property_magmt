@@ -53,7 +53,15 @@ class replyreq(models.Model):
     company_name=models.OneToOneField(company,on_delete=models.CASCADE,null=True,blank=True)
     reply=models.FileField(blank=True,null=True)
 
+class userComplaint(models.Model):
+    user = models.ForeignKey(Login, on_delete=models.DO_NOTHING)
+    subject = models.CharField(max_length=200)
+    complaint = models.TextField()
+    date = models.DateField()
+    reply = models.TextField(null=True, blank=True)
 
+    def __str__(self):
+      return self.user
 
 
 
