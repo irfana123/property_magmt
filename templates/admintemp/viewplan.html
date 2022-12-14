@@ -1,0 +1,35 @@
+{% extends 'admintemp/ahome.html' %}
+{% block content %}
+{% load crispy_forms_filters %}
+
+
+{% for i in plan %}
+                      <div class="col-md-55">
+
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width:100%; display: block;" src="{{i.elevation.url}}" alt="image" />
+                            <div class="mask">
+                              <p>{{i.area}}</p>
+
+                            </div>
+                          </div>
+                          <div class="caption">
+                              <div class="tools tools-bottom">
+                                  <strong>{{i.company}}</strong><br>
+                                <a href="#"><i class="fa fa-building" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-toilet"></i>{{i.bathrooms}}bath</a>
+                                <a href="#"><i class="fa fa-bed"></i> {{i.rooms}}</a>
+                              </div>
+                            <p><strong>{{i.area}} Sq.ft Area
+
+                            </strong></p>
+                          </div>
+                        </div>
+                      </div>
+
+                        {% endfor %}
+
+
+
+{% endblock %}

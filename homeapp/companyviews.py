@@ -65,4 +65,4 @@ def reviews(request):
     return render(request,'companytemp/reviews.html')
 
 def viewcomplaint(request):
-    return render(request,'companytemp/viewcomplaint.html')
+    return render(request,'companytemp/viewselfcomplaint.html')

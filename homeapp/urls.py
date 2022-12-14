@@ -16,6 +16,10 @@ path('user_home',userviews.user_home,name='user_home'),
 #     admin views
 path('view_company',adminviews.view_company,name='view_company'),
 path('view_users',adminviews.view_users,name='view_users'),
+path('viewplan',adminviews.viewplan,name='viewplan'),
+path('viewpayment',adminviews.viewpayment,name='viewpayment'),
+path('viewcomplaint',adminviews.viewcomplaint,name='viewcomplaint'),
+path('reply_complaint/<int:id>/',adminviews.reply_complaint,name='reply_complaint'),
 
 
 
@@ -39,6 +43,7 @@ path('requestplans',userviews.requestplans,name='requestplans'),
 path('viewrequest',userviews.viewrequest,name='viewrequest'),
 path('addcomplaint',userviews.addcomplaint,name='addcomplaint'),
 path('complaintview',userviews.complaintview,name='complaintview'),
+path('purchaseplans',userviews.purchaseplans,name='purchaseplans'),
 path('viewreqreply/<int:id>/',userviews.viewreqreply,name='viewreqreply'),
 
 

@@ -64,5 +64,8 @@ def addcomplaint(request):
 
 def complaintview(request):
     n = userComplaint.objects.filter(user=request.user)
-    return render(request, 'usertemp/viewcomplaint.html', {'n': n})
+    return render(request, 'usertemp/viewselfcomplaint.html', {'n': n})
 
+
+def purchaseplans(request):
+    return render(request,'usertemp/purchasepge.html')
